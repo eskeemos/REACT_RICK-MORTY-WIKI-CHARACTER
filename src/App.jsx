@@ -30,9 +30,7 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards />
-              <Cards />
-              <Cards />
+              <Cards results={results}/>
             </div>
           </div>
         </div>
