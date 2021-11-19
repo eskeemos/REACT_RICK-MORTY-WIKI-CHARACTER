@@ -4,3 +4,8 @@ body{
     font-family: 'Rubik', sans-serif;
     background-color: #161616;
 }
+a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
