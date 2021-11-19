@@ -7,7 +7,7 @@ const Cards = ({ results }) => {
 		content = results.map(result => {
 			let { id, name, image, location, status } = result;
 			return(
-			<div className="col-4 position-relative text-truncate mb-4" key={id}>
+			<div className="col-3 position-relative text-truncate mb-4" key={id}>
 				<div className="border-bottom border-primary">
 					<img src={image} alt="" className="img-fluid"/>
 					<div className="content mw-20">

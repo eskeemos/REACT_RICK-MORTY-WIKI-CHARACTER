@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Filters from './components/Filters.jsx';
 import Cards from './components/Cards.jsx';
 import React, { useState, useEffect } from 'react';
@@ -10,9 +10,12 @@ function App() {
 	let [page, setpage] = useState(1);
 	let [search, setsearch] = useState("");
 	let [data, setdata] = useState([]);
+	const [species, setspecies] = useState("");
+	const [status, setstatus] = useState("");
+	const [gender, setgender] = useState("");
 	let { info, results } = data;
 
-	let api = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}`;
+	let api = `https://rickandmortyapi.com/api/character/?page=${page}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
 	useEffect(() => {
 		
@@ -31,14 +34,17 @@ function App() {
 		</div>
 		<div className="container">
 			<div className="row">
-			<div className="col-3">
-				<Filters />
-			</div>
-			<div className="col-8">
-				<div className="row">
-				<Cards results={results}/>
+				<Filters 
+					setspecies={setspecies}
+					setstatus={setstatus} 
+					setpage={setpage}
+					setgender={setgender}
+				/>
+				<div className="col-8">
+					<div className="row">
+					<Cards results={results}/>
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 		<Pagination info={info} setpage={setpage} page={page}/>
