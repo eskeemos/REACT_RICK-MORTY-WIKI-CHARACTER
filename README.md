@@ -6,6 +6,7 @@
 #   @popperjs/core
 #   sass
 #   react-paginate --save
+#   react-router-dom
 npm install
 
 # Serve on localhost:3000
