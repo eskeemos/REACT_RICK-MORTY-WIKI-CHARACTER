@@ -23,12 +23,12 @@ const Navbar = () => {
                         }
                         `}
                     </style>
-                    <i class="fas fs-3 text-light fa-bars open"></i>
-                    <i class="fas fs-3 text-light fa-window-close close"></i>
+                    <i className="fas fs-3 text-light fa-bars open"></i>
+                    <i className="fas fs-3 text-light fa-window-close close"></i>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <NavLink to="" className="nav-link text-light" activeClassName="active" aria-current="page" href="#">Characters</NavLink>
+                        <NavLink to="" className="nav-link text-light" aria-current="page" href="#">Characters</NavLink>
                         <NavLink to="/episodes" className="nav-link text-light" href="#">Episodes</NavLink>
                         <NavLink to="/location" className="nav-link text-light" href="#">Location</NavLink>
                     </div>

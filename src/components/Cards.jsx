@@ -8,12 +8,12 @@ const Cards = ({ results }) => {
 			let { id, name, image, location, status } = result;
 			return(
 			<div className="col-3 position-relative text-truncate mb-4" key={id}>
-				<div className="border-bottom border-primary">
+				<div className="border-bottom border-warning">
 					<img src={image} alt="" className="img-fluid"/>
 					<div className="content mw-20">
 						<div className="my-1 text-nowrap text-center">{name}</div>
 						<div className="text-center">
-							<div className="text-primary">Last location : </div>
+							<div className="text-warning">Last location : </div>
 							<div className="">{location.name}</div>
 						</div>
 					</div>
