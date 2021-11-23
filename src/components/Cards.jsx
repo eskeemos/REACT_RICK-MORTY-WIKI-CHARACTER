@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Cards = ({ results }) => {
+const Cards = ({ results, page }) => {
 	let content;
 	
 	if(results){
 		content = results.map(result => {
 			let { id, name, image, location, status } = result;
 			return(
-			<div className="col-3 position-relative text-truncate mb-4" key={id}>
+			<Link to={`${page}${id}`} className="col-3 position-relative text-truncate mb-4" key={id}>
 				<div className="border-bottom border-warning">
 					<img src={image} alt="" className="img-fluid"/>
 					<div className="content mw-20">
@@ -25,7 +26,7 @@ const Cards = ({ results }) => {
 					return(<div className={`badge ${x} position-absolute`} style={{right:"20px", top:"5px"}}>{status}</div>)
 					})()
 				}
-			</div>
+			</Link>
 			)
 		})
 	}else{

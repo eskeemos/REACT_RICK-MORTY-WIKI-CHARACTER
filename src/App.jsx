@@ -9,6 +9,7 @@ import Navbar from './components/Navbar.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Episode from './pages/Episode';
 import Location from './pages/Location';
+import CardDetails from './components/CardDetails.jsx';
 
 function App(){
 	return(
@@ -18,8 +19,11 @@ function App(){
 			</div>
 			<Routes>
 				<Route path="/" element={<Home />}/>
+				<Route path="/:id" element={<CardDetails />}/>
 				<Route path="/episodes" element={<Episode />}/>
+				<Route path="/episodes/:id" element={<CardDetails />}/>
 				<Route path="/location" element={<Location />}/>
+				<Route path="/location/:id" element={<CardDetails />}/>
 			</Routes>
 		</Router>
 	);
@@ -47,6 +51,8 @@ const Home = () => {
 
 	return (
 		<div className="App">
+			<h1 className="text-center text-warning mb-4">Characters</h1>
+			<Search  setpage={setpage} setsearch={setsearch}/>
 			<div className="container">
 				<div className="row">
 					<Filters 
@@ -57,7 +63,7 @@ const Home = () => {
 					/>
 					<div className="col-8">
 						<div className="row">
-						<Cards results={results}/>
+						<Cards page="/" results={results}/>
 						</div>
 					</div>
 				</div>
